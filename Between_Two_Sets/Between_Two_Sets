@@ -1,0 +1,25 @@
+def getTotalX(a, b):
+    # Write your code here
+    start_val = max(a)
+    end_val = min(b)
+    num_cnt = 0
+    for val in range(start_val, end_val + 1):
+        flaga = 0
+        flagb = 0
+        for item in a:
+            if val % item != 0:
+                flaga = 1
+                break
+        if flaga == 1:
+            continue
+        elif flaga == 0:
+            for item in b:
+                if item % val != 0:
+                    flagb = 1
+                    break
+        if flagb == 1:
+            continue
+        if flaga == 0 and flagb == 0:
+            num_cnt += 1
+    
+    return num_cnt
