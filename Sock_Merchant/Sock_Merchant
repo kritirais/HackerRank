@@ -1,0 +1,13 @@
+def sockMerchant(n, ar):
+    red_ar = list(set(ar))
+    cnt = []
+    pairs_ = 0
+    for item in red_ar:
+        cnt.append(ar.count(item))
+    
+    for item in cnt:
+        if (item % 2 == 0) or (item % 2 != 0 and item != 1):
+            pairs_ += int(item / 2)
+
+
+    return pairs_
