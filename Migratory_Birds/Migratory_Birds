@@ -1,0 +1,13 @@
+def migratoryBirds(arr):
+    
+    red_arr = list(set(arr))
+    bird_cnt = []
+    
+    for item in red_arr:
+        bird_cnt.append(arr.count(item))
+        
+    max_cnt = max(bird_cnt)
+    
+    ret_val = min([red_arr[i] for i in range(len(red_arr)) if bird_cnt[i] == max_cnt])
+
+    return ret_val
