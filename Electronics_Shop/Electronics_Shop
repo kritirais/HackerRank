@@ -1,0 +1,15 @@
+def getMoneySpent(keyboards, drives, b):
+    #
+    # Write your code here.
+    #
+    can_buy = []
+
+    for keybrd in keyboards:
+        for drive in drives:
+            if keybrd + drive <= b:
+                can_buy.append(keybrd + drive)
+    
+    if can_buy == []:
+        return -1
+    else:
+        return max(can_buy)
