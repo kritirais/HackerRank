@@ -1,0 +1,29 @@
+def dayOfProgrammer(year):
+    if (year >= 1700 and year <= 1917) or (year >= 1919 and year <= 2700):
+        num_days = 0
+        if year <= 1917:
+            if year % 4 == 0 and calendar.monthrange(year, 2)[1] == 28:
+                num_days += 1
+        for mon in range(1, 13):
+            num_days += calendar.monthrange(year, mon)[1]
+            if num_days > 256:
+                num_days -= calendar.monthrange(year, mon)[1]
+                rem_days = 256 - num_days
+                if len(str(mon)) == 1:
+                    mon = '0' + str(mon)
+                ret_str = str(rem_days) + '.' + str(mon) + '.' + str(year)
+                break
+
+    if year == 1918:
+        num_days = 31 + 28 - 13
+        for mon in range(3, 13):
+            num_days += calendar.monthrange(year, mon)[1]
+            if num_days > 256:
+                num_days -= calendar.monthrange(year, mon)[1]
+                rem_days = 256 - num_days
+                if len(str(mon)) == 1:
+                    mon = '0' + str(mon)
+                ret_str = str(rem_days) + '.' + str(mon) + '.' + str(year)
+                break
+    
+    return ret_str
