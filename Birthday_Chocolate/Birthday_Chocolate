@@ -1,0 +1,22 @@
+def birthday(s, d, m):
+    result = 0
+    if (m == len(s) and d != sum(s)) or (len(s) < m):
+        result = 0
+    else:
+        print("Hello")
+        num_bar = m
+        for i in range(len(s)):
+            if i + num_bar > len(s):
+                break
+            else:
+                try:
+                    sum_ = s[i : i + num_bar]
+                    if sum(sum_) == d:
+                        result += 1
+                    elif sum(sum_) != d:
+                        continue
+                except IndexError:
+                    break
+                
+
+    return result
