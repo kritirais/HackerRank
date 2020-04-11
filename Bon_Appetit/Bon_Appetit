@@ -1,0 +1,9 @@
+def bonAppetit(bill, k, b):
+    charge_extra = int(sum(bill) / 2)
+    charge_actual = int((sum(bill) - bill[k]) / 2)
+
+    if b == charge_extra:
+        print(charge_extra - charge_actual)
+    
+    else:
+        print("Bon Appetit")
