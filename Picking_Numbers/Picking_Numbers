@@ -1,0 +1,22 @@
+import math
+def pickingNumbers(a):
+    # Write your code here
+    
+    uniq = list(set(a))
+    uniq.sort(reverse = True)
+    list_ = []
+
+    if(len(uniq) == 1):
+        return len(a)
+
+    for i in range(len(uniq) - 1):
+        j = i + 1
+        if abs(uniq[i] - uniq[j]) <= 1:
+            numval1 = a.count(uniq[i])
+            numval2 = a.count(uniq[j])
+            list_.append(numval1 + numval2)
+
+        if a.count(uniq[i]) >= 1:
+            list_.append(a.count(uniq[i]))
+
+    return max(list_)
