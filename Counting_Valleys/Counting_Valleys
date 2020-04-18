@@ -1,0 +1,43 @@
+import math
+def countingValleys(n, s):
+    cntValley = 0
+    curr_alt = 0
+    i = 0
+    up = down = 0
+
+    while i < n:
+        
+        if s[i] == 'U':
+            curr_alt += 1
+        
+        if s[i] == 'D':
+            curr_alt -= 1
+
+        if (curr_alt < 0):
+            
+            down += abs(curr_alt)
+
+            i += 1
+
+            while True:
+
+                if i == n:
+                    break
+                
+                if s[i] == 'U':
+                    up += 1
+                
+                if s[i] == 'D':
+                    down += 1
+
+                if up == down:
+                    up = down = 0
+                    cntValley += 1
+                    curr_alt = 0
+                    break
+
+                i += 1
+                        
+        i += 1
+        
+    return cntValley
