@@ -1,0 +1,6 @@
+def designerPdfViewer(h, word):
+    val = [ord(w) - 96 for w in word]
+
+    weight = [h[i - 1] for i in val]
+
+    return max(weight) * len(word)
