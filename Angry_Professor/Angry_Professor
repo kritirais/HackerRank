@@ -1,0 +1,8 @@
+def angryProfessor(k, a):
+
+    stu = len([item for item in a if item <= 0])
+
+    if stu >= k:
+        return "NO"
+    else:
+        return "YES" 
