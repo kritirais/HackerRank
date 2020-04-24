@@ -1,0 +1,11 @@
+import math
+
+def viralAdvertising(n):
+    shared = 5
+    like_cum = like = math.floor(shared / 2)
+    for day in range(2, n + 1):
+        shared = like * 3
+        like = math.floor(shared / 2)
+        like_cum += like
+
+    return like_cum
