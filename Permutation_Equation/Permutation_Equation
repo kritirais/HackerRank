@@ -1,0 +1,9 @@
+def permutationEquation(p):
+    ret = []
+    p_sort = sorted(p)
+    for val in p_sort:
+        ind = p.index(val) + 1
+        if ind in p:
+            ret.append(p.index(ind) + 1)
+
+    return ret
